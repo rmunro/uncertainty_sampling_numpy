@@ -21,28 +21,9 @@ __license__ = "MIT"
 __version__ = "1.0.1"
 
 
-def softmax(prediction, base=np.exp(1)):
-	""" 
-	Converts a set of raw scores from a model into a 
-	probability distribution via softmax.
-		
-	The probability distribution will be a set of real numbers
-	such that each is in the range 0-1.0 and the sum is 1.0.
-
-	Assumes input is in the form: [1.0, 4.0, 2.0, 3.0]
-		
-	Keyword arguments:
-		prediction -- a numpy array of any positive/negative real numbers.
-		base -- the base for the exponential (default e)
-	"""
-	exps = base**prediction # exponential for each value in array
-	sum_exps = np.sum(exps) # sum of all exponentials
-	prob_dist = exps / sum_exps # normalize exponentials 
-	return prob_dist
-
-
 def margin_confidence(prob_dist, sorted=False):
-	""" 
+	""" Margin of Confidence Uncertainty Sampling
+
 	Returns the uncertainty score of a probability distribution using
 	margin of confidence sampling in a 0-1 range where 1 is the most uncertain
 	
@@ -63,7 +44,8 @@ def margin_confidence(prob_dist, sorted=False):
 	
 
 def ratio_confidence(prob_dist, sorted=False):
-	""" 
+	"""Ratio of Confidence Uncertainty Sampling 
+ 
 	Returns the uncertainty score of a probability distribution using
 	ratio of confidence sampling in a 0-1 range where 1 is the most uncertain
 	
@@ -85,7 +67,8 @@ def ratio_confidence(prob_dist, sorted=False):
 
 
 def least_confidence(prob_dist, sorted=False):
-	""" 
+	""" Least Confidence Uncertainty Sampling 
+
 	Returns the uncertainty score of a probability distribution using
 	least confidence sampling in a 0-1 range where 1 is the most uncertain
 	
@@ -110,7 +93,8 @@ def least_confidence(prob_dist, sorted=False):
 
 
 def entropy_score(prob_dist):
-	""" 
+	""" Entropy-Based Uncertainty Sampling 
+
 	Returns the uncertainty score of a probability distribution using
 	entropy score
 	
@@ -129,8 +113,3 @@ def entropy_score(prob_dist):
 	return normalized_entropy
 	
 	
-
-
-
-
-

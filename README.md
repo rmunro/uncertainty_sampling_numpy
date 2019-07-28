@@ -1,4 +1,5 @@
 # NumPy Uncertainty Sampling
+
 NumPy implementations of common Active Learning strategies for Uncertainty Sampling
 
 The four types of Uncertainty Sampling in this repository are:
@@ -19,5 +20,7 @@ Note that I started writing the text using NumPy but switched to PyTorch, so you
 
 https://github.com/rmunro/pytorch_active_learning/
 
+## Release notes
 
+All code is released by Robert Munro open source under the MIT License v1.0.1
 
