@@ -1,4 +1,4 @@
-# Numpy Uncertainty Sampling
+# NumPy Uncertainty Sampling
 NumPy implementations of common Active Learning strategies for Uncertainty Sampling
 
 The four types of Uncertainty Sampling in this repository are:
